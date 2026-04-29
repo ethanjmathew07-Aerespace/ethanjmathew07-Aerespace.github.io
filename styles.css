@@ -649,6 +649,10 @@ figcaption {
   object-fit: cover;
 }
 
+.personal-photo-wide img {
+  object-position: center 26%;
+}
+
 .personal-photo-wide {
   grid-column: span 2;
 }
