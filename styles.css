@@ -137,7 +137,7 @@ main,
   display: grid;
   place-items: center;
   border-radius: 0.95rem;
-  font-family: "Orbitron", sans-serif;
+  font-family: "Megrim", sans-serif;
   font-weight: 800;
   color: #fff7de;
   background:
@@ -155,7 +155,7 @@ main,
 .brand-title,
 .brand-subtitle {
   display: block;
-  font-family: "Orbitron", sans-serif;
+  font-family: "Megrim", sans-serif;
   text-transform: uppercase;
 }
 
@@ -260,7 +260,7 @@ main {
 
 .eyebrow {
   margin: 0 0 0.85rem;
-  font-family: "Orbitron", sans-serif;
+  font-family: "Megrim", sans-serif;
   font-size: 0.82rem;
   letter-spacing: 0.24em;
   text-transform: uppercase;
@@ -272,7 +272,7 @@ h2,
 h3,
 h4 {
   margin: 0;
-  font-family: "Orbitron", sans-serif;
+  font-family: "Megrim", sans-serif;
   line-height: 1.05;
 }
 
@@ -380,7 +380,7 @@ figcaption {
 .metric-card strong {
   display: block;
   margin: 0.35rem 0 0.45rem;
-  font-family: "Orbitron", sans-serif;
+  font-family: "Megrim", sans-serif;
   font-size: 1.05rem;
 }
 
@@ -563,7 +563,7 @@ figcaption {
 
 .readout-row strong {
   color: var(--blue);
-  font-family: "Orbitron", sans-serif;
+  font-family: "Megrim", sans-serif;
   font-size: 0.98rem;
 }
 
@@ -629,8 +629,8 @@ figcaption {
 
 .personal-gallery {
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  grid-auto-rows: 11rem;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  grid-auto-rows: 12.5rem;
   gap: 0.85rem;
 }
 
@@ -649,8 +649,20 @@ figcaption {
   object-fit: cover;
 }
 
-.personal-photo-wide img {
-  object-position: center 26%;
+.personal-photo-lake img {
+  object-position: center 24%;
+}
+
+.personal-photo-game-day img {
+  object-position: center 34%;
+}
+
+.personal-photo-graduation img {
+  object-position: center 8%;
+}
+
+.personal-photo-family img {
+  object-position: center 44%;
 }
 
 .personal-photo-wide {
@@ -729,6 +741,91 @@ figcaption {
   display: grid;
   gap: 1rem;
   margin-top: 1rem;
+}
+
+.cad-skills {
+  margin-top: 1rem;
+  background:
+    radial-gradient(circle at top right, rgba(117, 229, 255, 0.08), transparent 28%),
+    radial-gradient(circle at top left, rgba(241, 203, 121, 0.12), transparent 24%),
+    linear-gradient(180deg, rgba(39, 22, 27, 0.95), rgba(15, 11, 17, 0.93));
+}
+
+.cad-section-layout {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 1rem;
+  align-items: start;
+}
+
+.cad-skills.panel {
+  margin-top: 0;
+}
+
+.cad-skills > p {
+  color: var(--muted);
+  line-height: 1.55;
+  font-size: 1.15rem;
+  margin: 0 0 1.25rem;
+}
+
+.cad-skills-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+.cad-skills-grid .cad-card-featured {
+  grid-column: span 2;
+}
+
+.cad-card {
+  padding: 1rem 1.05rem;
+  border-radius: var(--radius-md);
+  border: 1px solid rgba(201, 154, 66, 0.2);
+  background:
+    linear-gradient(180deg, rgba(48, 23, 28, 0.66), rgba(17, 12, 16, 0.86));
+}
+
+.cad-card-featured {
+  background:
+    radial-gradient(circle at top right, rgba(117, 229, 255, 0.14), transparent 34%),
+    linear-gradient(145deg, rgba(143, 19, 39, 0.5), rgba(34, 18, 22, 0.92));
+  border-color: rgba(117, 229, 255, 0.28);
+}
+
+.cad-card h4 {
+  margin: 0.45rem 0;
+}
+
+.cad-card p {
+  margin: 0;
+  color: var(--muted);
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
+.cad-visual-grid {
+  display: grid;
+  gap: 1rem;
+}
+
+.cad-project-shot {
+  margin: 0;
+  overflow: hidden;
+  padding: 0;
+}
+
+.cad-project-shot img {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+  object-position: center;
+}
+
+.cad-project-shot figcaption {
+  padding: 1rem 1.15rem 1.2rem;
+  font-size: 1rem;
 }
 
 .notable-tools {
@@ -895,6 +992,8 @@ figcaption {
   .about-grid,
   .about-personal-grid,
   .software-grid,
+  .cad-section-layout,
+  .cad-skills-grid,
   .notable-tools-grid,
   .gallery-grid,
   .hardware-layout {
@@ -969,8 +1068,13 @@ figcaption {
 
   .hero-metrics,
   .hardware-cards,
+  .cad-skills-grid,
   .notable-tools-grid {
     grid-template-columns: 1fr;
+  }
+
+  .cad-skills-grid .cad-card-featured {
+    grid-column: auto;
   }
 
   .personal-gallery {
@@ -995,5 +1099,495 @@ figcaption {
   .site-footer {
     flex-direction: column;
     padding-bottom: 2rem;
+  }
+}
+
+/* Metallic Mark 85 palette and geometric display treatment */
+:root {
+  --bg: #050506;
+  --bg-elevated: rgba(25, 12, 15, 0.9);
+  --panel: rgba(31, 18, 21, 0.92);
+  --panel-strong: rgba(43, 19, 24, 0.97);
+  --line: rgba(246, 197, 94, 0.28);
+  --line-strong: rgba(255, 221, 139, 0.54);
+  --text: #fff8e9;
+  --muted: #d8c9bd;
+  --red: #780816;
+  --red-bright: #c8172d;
+  --gold: #c99a3e;
+  --gold-soft: #ffe09a;
+  --gold-deep: #64400b;
+  --blue: #a8f2ff;
+  --blue-strong: #56dfff;
+  --shadow:
+    0 28px 75px rgba(0, 0, 0, 0.62),
+    0 5px 16px rgba(46, 0, 7, 0.34);
+}
+
+body {
+  background:
+    radial-gradient(circle at 12% 5%, rgba(210, 17, 48, 0.32), transparent 26%),
+    radial-gradient(circle at 78% 4%, rgba(237, 185, 63, 0.19), transparent 22%),
+    radial-gradient(circle at 48% 23%, rgba(126, 4, 23, 0.2), transparent 34%),
+    linear-gradient(122deg, #040405 0%, #12080a 28%, #08080b 58%, #030304 100%);
+}
+
+.page-shell::before {
+  border-color: rgba(232, 184, 75, 0.27);
+  box-shadow:
+    inset 0 0 22px rgba(115, 3, 19, 0.22),
+    0 0 32px rgba(0, 0, 0, 0.5);
+}
+
+.page-shell::after {
+  background-image:
+    linear-gradient(rgba(225, 184, 92, 0.045) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(225, 184, 92, 0.045) 1px, transparent 1px);
+}
+
+.page-glow-left {
+  background: rgba(196, 7, 35, 0.72);
+}
+
+.page-glow-right {
+  background: rgba(219, 162, 48, 0.46);
+}
+
+.site-header {
+  background: linear-gradient(180deg, rgba(5, 4, 5, 0.93), rgba(7, 4, 5, 0.22) 82%, transparent);
+}
+
+.brand-mark {
+  font-weight: 400;
+  letter-spacing: 0.08em;
+  color: #fff8e8;
+  border: 1px solid rgba(255, 221, 139, 0.55);
+  background:
+    linear-gradient(112deg, transparent 0 34%, rgba(255, 255, 255, 0.28) 43%, transparent 51%),
+    linear-gradient(145deg, #4c020d 0%, #d91d37 34%, #7c0618 58%, #e7bd5c 100%);
+  box-shadow:
+    inset 1px 1px 0 rgba(255, 255, 255, 0.28),
+    inset -3px -4px 8px rgba(35, 0, 5, 0.72),
+    0 0 25px rgba(218, 16, 47, 0.22);
+}
+
+.brand-title,
+.brand-subtitle,
+.site-nav a,
+.button,
+.metric-label,
+.skill-tag,
+.skill-score {
+  font-family: "Megrim", sans-serif;
+}
+
+.brand-title,
+.brand-subtitle {
+  font-weight: 400;
+  text-shadow: 0 0 14px rgba(255, 224, 154, 0.16);
+}
+
+.brand-title {
+  font-size: 1rem;
+  letter-spacing: 0.18em;
+}
+
+.brand-subtitle {
+  color: var(--gold-soft);
+  letter-spacing: 0.25em;
+}
+
+.site-nav {
+  border-color: rgba(232, 184, 75, 0.34);
+  background:
+    linear-gradient(110deg, transparent 0 27%, rgba(255, 255, 255, 0.065) 40%, transparent 52%),
+    linear-gradient(180deg, rgba(72, 19, 27, 0.95), rgba(18, 11, 13, 0.96));
+  box-shadow:
+    inset 0 1px 0 rgba(255, 236, 193, 0.1),
+    var(--shadow);
+}
+
+.site-nav a {
+  font-size: 0.95rem;
+  font-weight: 400;
+  letter-spacing: 0.12em;
+  color: #f1dfca;
+}
+
+.site-nav a:hover,
+.site-nav a:focus-visible {
+  color: var(--gold-soft);
+  text-shadow: 0 0 18px rgba(255, 215, 121, 0.44);
+}
+
+.hero-copy,
+.arc-panel,
+.panel,
+.metric-card,
+.skill-card,
+.hardware-card {
+  isolation: isolate;
+  border-color: rgba(236, 188, 81, 0.27);
+  background:
+    linear-gradient(118deg, transparent 0 36%, rgba(255, 255, 255, 0.055) 44%, transparent 53%),
+    repeating-linear-gradient(98deg, rgba(255, 255, 255, 0.018) 0 1px, transparent 1px 5px),
+    linear-gradient(155deg, rgba(72, 22, 29, 0.97), rgba(24, 16, 19, 0.97) 43%, rgba(10, 10, 12, 0.98));
+  box-shadow:
+    inset 0 1px 0 rgba(255, 235, 189, 0.09),
+    inset 0 -1px 0 rgba(70, 0, 11, 0.75),
+    var(--shadow);
+}
+
+.hero-copy {
+  background:
+    radial-gradient(circle at 86% 12%, rgba(255, 216, 123, 0.23), transparent 22%),
+    linear-gradient(116deg, transparent 0 34%, rgba(255, 255, 255, 0.1) 42%, transparent 50%),
+    repeating-linear-gradient(100deg, rgba(255, 255, 255, 0.025) 0 1px, transparent 1px 6px),
+    linear-gradient(132deg, #47020d 0%, #a80b23 20%, #5d0917 38%, #241419 64%, #0a0a0d 100%);
+}
+
+.hero-copy::before,
+.arc-panel::before,
+.panel::before,
+.metric-card::before,
+.skill-card::before,
+.hardware-card::before {
+  background: linear-gradient(
+    135deg,
+    rgba(255, 231, 174, 0.78),
+    rgba(126, 75, 13, 0.34) 30%,
+    rgba(255, 255, 255, 0.2) 52%,
+    rgba(120, 2, 18, 0.68)
+  );
+}
+
+.eyebrow,
+h1,
+h2,
+h3,
+h4 {
+  font-weight: 400;
+  text-shadow:
+    0 1px 0 rgba(255, 244, 216, 0.12),
+    0 0 18px rgba(178, 11, 38, 0.16);
+}
+
+.eyebrow {
+  color: var(--gold-soft);
+  letter-spacing: 0.28em;
+}
+
+h1 {
+  letter-spacing: 0.09em;
+  color: #fffaf0;
+}
+
+h2,
+h3,
+h4 {
+  letter-spacing: 0.045em;
+}
+
+.button {
+  font-weight: 400;
+  letter-spacing: 0.12em;
+}
+
+.button-primary {
+  color: #fff9e8;
+  border-color: rgba(255, 216, 125, 0.46);
+  background:
+    linear-gradient(112deg, transparent 0 31%, rgba(255, 255, 255, 0.28) 43%, transparent 51%),
+    linear-gradient(135deg, #62010f 0%, #d41935 37%, #770718 66%, #d8a948 100%);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.28),
+    inset 0 -4px 8px rgba(55, 0, 8, 0.46),
+    0 16px 34px rgba(119, 2, 22, 0.4);
+}
+
+.button-secondary {
+  color: var(--gold-soft);
+  border-color: rgba(240, 193, 91, 0.42);
+  background:
+    linear-gradient(118deg, transparent 0 34%, rgba(255, 255, 255, 0.08) 44%, transparent 53%),
+    linear-gradient(180deg, rgba(48, 33, 23, 0.94), rgba(13, 12, 14, 0.96));
+}
+
+.metric-label,
+.skill-tag {
+  color: var(--gold-soft);
+  letter-spacing: 0.1em;
+}
+
+.metric-card strong,
+.readout-row strong {
+  font-family: "Megrim", sans-serif;
+  font-weight: 400;
+  letter-spacing: 0.08em;
+}
+
+.arc-panel {
+  background:
+    radial-gradient(circle at center, rgba(255, 226, 154, 0.1), transparent 32%),
+    radial-gradient(circle at center, rgba(86, 223, 255, 0.13), transparent 23%),
+    linear-gradient(118deg, transparent 0 38%, rgba(255, 255, 255, 0.07) 46%, transparent 54%),
+    linear-gradient(160deg, #311016 0%, #120d0f 48%, #050609 100%);
+}
+
+.arc-reactor-shell {
+  background:
+    radial-gradient(circle, rgba(255, 239, 194, 0.12), transparent 58%),
+    repeating-conic-gradient(
+      from 0deg,
+      #f0c96c 0deg 12deg,
+      #6d4409 12deg 22deg,
+      #c68e29 22deg 34deg,
+      #2d1b05 34deg 45deg
+    );
+  box-shadow:
+    inset 0 0 0 16px rgba(17, 13, 14, 0.98),
+    inset 0 0 0 22px rgba(245, 199, 97, 0.64),
+    inset 0 0 24px rgba(255, 242, 205, 0.2),
+    0 0 44px rgba(220, 161, 44, 0.22);
+}
+
+.arc-reactor-ring-outer {
+  border-color: rgba(169, 243, 255, 0.72);
+}
+
+.arc-reactor {
+  width: min(24rem, 84%);
+  aspect-ratio: 1;
+  overflow: hidden;
+  padding: 10px;
+  border-radius: 50%;
+  border: 1px solid rgba(255, 220, 136, 0.72);
+  background:
+    linear-gradient(135deg, rgba(255, 255, 255, 0.25), transparent 24%),
+    conic-gradient(
+      from 12deg,
+      #2a080e,
+      #a41028 10%,
+      #50101a 18%,
+      #d8a846 28%,
+      #4a2a08 37%,
+      #8b0c20 48%,
+      #26080e 59%,
+      #c6983c 70%,
+      #5a3509 80%,
+      #8e0b21 91%,
+      #2a080e
+    );
+  box-shadow:
+    inset 0 0 0 3px rgba(20, 5, 8, 0.94),
+    inset 0 0 0 6px rgba(222, 174, 73, 0.3),
+    inset 0 0 24px rgba(255, 221, 140, 0.18),
+    0 0 18px rgba(110, 231, 255, 0.34),
+    0 0 58px rgba(42, 171, 255, 0.22),
+    0 0 100px rgba(158, 12, 36, 0.18);
+  filter: none;
+}
+
+.arc-reactor::before,
+.arc-reactor::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+.arc-reactor::before {
+  inset: 9px;
+  border: 7px solid rgba(2, 7, 10, 0.9);
+  box-shadow:
+    inset 0 0 0 2px rgba(236, 188, 83, 0.44),
+    inset 0 0 0 4px rgba(152, 238, 255, 0.2),
+    inset 0 0 24px rgba(65, 211, 255, 0.24);
+}
+
+.arc-reactor::after {
+  inset: 10px;
+  background:
+    linear-gradient(135deg, rgba(255, 255, 255, 0.18), transparent 29%),
+    radial-gradient(circle, transparent 54%, rgba(64, 209, 255, 0.12) 73%, rgba(0, 0, 0, 0.28) 100%);
+  mix-blend-mode: screen;
+}
+
+.arc-reactor-shell {
+  inset: 9%;
+  z-index: 0;
+  background:
+    radial-gradient(circle, transparent 0 30%, rgba(68, 224, 255, 0.16) 31% 39%, transparent 40%),
+    repeating-conic-gradient(
+      from 11.25deg,
+      #e5b74f 0deg 10deg,
+      #6d430a 10deg 20deg,
+      #24180a 20deg 25deg,
+      #bf8528 25deg 35deg,
+      #392209 35deg 45deg
+    );
+  box-shadow:
+    inset 0 0 0 13px rgba(8, 12, 15, 0.94),
+    inset 0 0 0 18px rgba(229, 183, 79, 0.54),
+    inset 0 0 36px rgba(70, 221, 255, 0.28),
+    0 0 30px rgba(52, 212, 255, 0.22);
+}
+
+.arc-reactor-ring-outer {
+  inset: 18%;
+  z-index: 1;
+  border: 3px solid rgba(120, 235, 255, 0.78);
+  box-shadow:
+    0 0 18px rgba(85, 225, 255, 0.42),
+    inset 0 0 18px rgba(85, 225, 255, 0.24);
+}
+
+.arc-reactor-ring-inner {
+  inset: 27%;
+  z-index: 1;
+  border: 9px solid rgba(235, 253, 255, 0.88);
+  box-shadow:
+    inset 0 0 0 3px rgba(73, 216, 255, 0.52),
+    0 0 24px rgba(121, 235, 255, 0.42);
+}
+
+.arc-reactor-segments {
+  inset: 13%;
+  z-index: 1;
+}
+
+.segment {
+  width: 22%;
+  height: 11%;
+  margin-top: -5.5%;
+  border: 1px solid rgba(234, 253, 255, 0.68);
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.78), transparent 32%),
+    linear-gradient(90deg, #eafcff 0 20%, #4cddff 20% 79%, #ecfdff 79% 100%);
+  box-shadow:
+    0 0 16px rgba(70, 220, 255, 0.62),
+    inset 0 0 9px rgba(255, 255, 255, 0.56);
+}
+
+.arc-reactor-core {
+  inset: 34%;
+  z-index: 1;
+  border: 2px solid rgba(222, 250, 255, 0.7);
+  box-shadow:
+    0 0 14px rgba(143, 241, 255, 0.8),
+    0 0 42px rgba(57, 216, 255, 0.58);
+}
+
+.arc-core-glow {
+  background:
+    radial-gradient(circle, #ffffff 0 12%, #c8f9ff 27%, #52defa 50%, rgba(24, 163, 224, 0.62) 68%, transparent 80%);
+  box-shadow:
+    0 0 32px rgba(157, 244, 255, 0.84),
+    0 0 76px rgba(43, 204, 255, 0.5);
+}
+
+.arc-core-grid {
+  inset: 17%;
+  border-color: rgba(225, 250, 255, 0.64);
+  background:
+    radial-gradient(circle, rgba(255, 255, 255, 0.66), transparent 60%),
+    repeating-linear-gradient(0deg, rgba(22, 151, 198, 0.32) 0 2px, transparent 2px 8px),
+    repeating-linear-gradient(90deg, rgba(22, 151, 198, 0.32) 0 2px, transparent 2px 8px);
+}
+
+.readout-row {
+  border-color: rgba(226, 178, 73, 0.28);
+  background:
+    linear-gradient(112deg, transparent 0 35%, rgba(255, 255, 255, 0.06) 44%, transparent 54%),
+    linear-gradient(180deg, rgba(59, 24, 29, 0.9), rgba(14, 12, 14, 0.94));
+  box-shadow: inset 0 1px 0 rgba(255, 236, 190, 0.07);
+}
+
+.about-personal,
+.skill-card-featured,
+.cad-skills,
+.notable-tools,
+.callout {
+  background:
+    radial-gradient(circle at 88% 10%, rgba(255, 224, 144, 0.17), transparent 26%),
+    linear-gradient(116deg, transparent 0 35%, rgba(255, 255, 255, 0.075) 44%, transparent 53%),
+    repeating-linear-gradient(100deg, rgba(255, 255, 255, 0.02) 0 1px, transparent 1px 6px),
+    linear-gradient(138deg, #52030f 0%, #8f0a20 23%, #35141b 50%, #0e0d10 100%);
+}
+
+.personal-tags span,
+.project-pillars span {
+  color: #fff3d2;
+  border-color: rgba(238, 192, 91, 0.42);
+  background:
+    linear-gradient(115deg, transparent 0 35%, rgba(255, 255, 255, 0.12) 45%, transparent 56%),
+    linear-gradient(180deg, rgba(154, 98, 20, 0.34), rgba(68, 34, 8, 0.3));
+  box-shadow: inset 0 1px 0 rgba(255, 239, 199, 0.09);
+}
+
+.personal-photo,
+.gallery-card,
+.cad-project-shot {
+  border-color: rgba(230, 181, 76, 0.36);
+  box-shadow:
+    inset 0 0 0 1px rgba(255, 239, 200, 0.04),
+    var(--shadow);
+}
+
+.tool-card,
+.cad-card {
+  border-color: rgba(225, 174, 66, 0.33);
+  background:
+    linear-gradient(115deg, transparent 0 34%, rgba(255, 255, 255, 0.06) 44%, transparent 55%),
+    linear-gradient(155deg, rgba(102, 20, 32, 0.78), rgba(23, 14, 17, 0.94) 60%, rgba(7, 8, 10, 0.98));
+  box-shadow: inset 0 1px 0 rgba(255, 235, 188, 0.07);
+}
+
+.cad-card-featured {
+  border-color: rgba(130, 231, 255, 0.36);
+  background:
+    radial-gradient(circle at 88% 10%, rgba(97, 226, 255, 0.17), transparent 27%),
+    linear-gradient(116deg, transparent 0 35%, rgba(255, 255, 255, 0.08) 44%, transparent 53%),
+    linear-gradient(138deg, #570410 0%, #950a22 27%, #30141a 56%, #0d0d10 100%);
+}
+
+.skill-score,
+.readout-row strong {
+  color: var(--blue);
+  text-shadow: 0 0 14px rgba(86, 223, 255, 0.3);
+}
+
+.skill-bar {
+  border: 1px solid rgba(255, 221, 141, 0.13);
+  background: rgba(0, 0, 0, 0.36);
+  box-shadow: inset 0 2px 5px rgba(0, 0, 0, 0.72);
+}
+
+.skill-bar span {
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.34), transparent 46%),
+    linear-gradient(90deg, #6d0313, #d51a35 36%, #e6b552 72%, #9eecf8);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.38),
+    0 0 16px rgba(216, 20, 49, 0.3);
+}
+
+.site-footer {
+  color: #bfae9d;
+  border-top: 1px solid rgba(223, 174, 70, 0.14);
+  padding-top: 1.4rem;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  .reveal {
+    opacity: 1;
+    transform: none;
+    transition: none;
   }
 }
